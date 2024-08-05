@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+
+
+  <!--using google fonts-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Page</title>
+  <link rel="stylesheet" href="./pay.css">
+
+
+  <!---font awesome for icons-->
+
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.2/css/fontawesome.min.css">
+  <!---favicon-->
+<link rel="icon" type="image/icon" href="./images/favicon.jpg" >
+  
+</head>
+<body>
+  <section class="paymentpage">
+    <nav id="top">
+      <a href="./index.html"><img   style="margin: 0px 0px 0px 10px ;"class="logo" src="./images/logo.webp" alt="logo image"></a>
+      <section class="nav-links" id="navLinks">
+        <i class="fa fa-times" onclick="hideMenu()"></i>
+       <ul>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./vegetablesproductpage.html">Vegetable Items</a></li>
+        <li><a href="./bakingpage.html">Baking<br>& Cooking</a></li>
+        <li><a href="./fruitspage.html">Fruits Items</a></li>
+        <li><a href="./seafoodpage.html">Meat<br>& Seafood</a></li>
+        <li><a href="./Dairypage.html">Dairy Items</a></li>
+        <li><a href="./addtocart.html">Order Page</a></li>
+        <li><a href="./Registerpage.html">Registration Page</a></li>
+      </ul>
+
+      </section>
+    
+    <i class="fa fa-bars" onclick="showMenu()"></i>
+    </nav>
+
+
+</section>
+
+<!--using javascript for hide and show button-->
+<script>
+
+  var navLinks = document.getElementById("navLinks");
+ 
+ function showMenu(){
+   navLinks.style.right = "0";
+
+}
+
+function hideMenu(){
+   navLinks.style.right = "-200px";
+   
+}
+</script>
+
+    <main>
+        <h1>Checkout</h1>
+        <section id="order-summary">
+            <h2>Your Order</h2>
+            <table id="checkout-order-table">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Category</th>
+                        <th>Quantity(Kg)</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Order items will be displayed here -->
+                </tbody>
+            </table>
+            <strong>Total Price: <span id="total-price">$0.00</span></strong>
+        </section>
+        
+        <section id="customer-details">
+            <h2>Customer Details</h2>
+            <form id="checkout-form" onsubmit="submitOrder(event)">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required placeholder="Enter Your Name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required placeholder="Example@gmail.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Contact Number:</label>
+                    <input type="tel" id="phone" name="phone" required placeholder="Enter Your Mobile Number">
+                </div>
+
+                <h2>Delivery Information</h2>
+                
+                <div class="form-group">
+                    <label for="address">Delivery Address:</label>
+                    <input type="text" id="address" name="address" required placeholder="Enter Your Delivery Address">
+                </div>
+
+                <div class="form-group">
+                    <label for="town">Town:</label>
+                    <input type="text" id="town" name="town" required placeholder="Enter Your Town">
+                </div>
+
+               
+                <h2>Payment Information</h2>
+                
+                <div class="form-group">
+                    <label for="paymentType">Payment Type:</label>
+                    <select id="paymentType" name="paymentType" required>
+                        <option value="creditCard">Credit Card</option>
+                        <option value="debitCard">Debit Card</option>
+                        <option value="visaCard">Visa Card</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="cardName">Card Number:</label>
+                    <input type="text" id="cardName" name="cardName" required placeholder="Enter Your Card Number">
+                </div>
+
+                <div class="form-group">
+                    <label for="expiryDate">Expiry Date:</label>
+                    <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="cvv">CVV:</label>
+                    <input type="text" id="cvv" name="cvv" required placeholder="Enter CVV Number">
+                </div>
+                
+                <button type="submit" class="btn">Checkout</button>
+            </form>
+        </section>
+    </main>
+    <!--footer start here-->
+
+<footer class="footer" style="margin-top: 20px;">
+    <section class="conatainer">
+      <section class="row">
+        <section class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="./aboutuspage.html">About Us</a></li>
+            <li><a href="#">Our Services</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+        
+          </ul>
+        </section>
+        <section class="footer-col">
+          <h4>Get Help</h4>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Returns</a></li>
+            <li><a href="#">Order Status</a></li>
+          </ul>
+        </section>
+        <section class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#">Catering</a></li>
+            <li><a href="#">Party Planning</a></li>
+            <li><a href="#">Vegetables Suppliers</a></li>
+          </ul>
+        </section>
+        <section class="footer-col">
+          <h4>Follow Us</h4>
+  
+          <ul class="socialmedia">
+            <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+            <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+          </ul>
+        </section>
+  
+      </section>
+    </section>
+  
+  
+  </footer>
+     <script src="./pay.js"></script>
+</body>
+</html>
